@@ -12,7 +12,7 @@ fn parse_direction(mut d: String) -> usize {
     d.pop(); // remove \n
     match d.as_str() {
         "A" => 1,
-        "D" => 17,
+        "D" => 18,
         _ => 0
     }
 }
@@ -37,7 +37,7 @@ fn is_valid(b: &Board, start: &usize, dir: &usize,
         // is the index valid?
         return false
     }
-    if ![1, 18].contains(dir) {
+    if !(dir == &1 || dir == &18) {
         // is the dir a dir?
         return false
     }
